@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --popins: "Poppins", sans-serif;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0;
+}
+.container h1 {
+  font-size: 2.5rem;
+  font-family: var(--popins);
+  font-weight: 700;
+}
+.container .title_add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.container .title_add img {
+  width: 3rem;
+}
+.container .todos {
+  width: 50%;
+  height: 50vh;
+  overflow-y: scroll;
+}
+.container .todos::-webkit-scrollbar {
+  display: none;
+}
+.container .todos .todo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 0 10px;
+}
+.container .todos .todo h5 {
+  font-family: var(--popins);
+  font-size: 1.5rem;
+  color: #000;
+}
+.container .todos .todo_button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%;
+}
+.container .todos .todo_button a img {
+  width: 2vw;
+}
+.container form {
+  width: 50%;
+  height: 10vh;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.container form input {
+  width: 90%;
+  height: 4vh;
+  padding: 20px 50px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+.container form button {
+  background-color: transparent;
+  color: #000;
+  font-size: 1.2rem;
+  border: 1px solid #000;
+  padding: 10px 20px;
+}
+.container form button:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}

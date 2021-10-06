@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title_add">
+        <h1>TODO APP</h1>
+        <img src="{% static './icons/add.svg' %}" alt="" id="add" />
+      </div>
+      <div class="todos">
+        <!-- FOR LOOP STARTS HERE -->
+        
+        {% for todo in todos %}
+        <div class="todo">
+          <h5 class="todo_txt">{{todo.todo}}</h5>
+          <div class="todo_button">
+            <a href="{% url 'delete' todo.id %}">
+              <img src="{% static './icons/delete.svg' %}" alt="" />
+            </a>
+            <a href="{% url 'edittodo' todo.id %}">
+              <img src="{% static './icons/edit.svg' %}" alt="" />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+        <!-- FOR LOOP ENDS HERE -->
+      </div>
+      <form action="" method="POST" id="add_form">
+        {% csrf_token %}
+        <input type="text" name="todo" placeholder="Todo" />
+        <button type="submit">Add</button>
+      </form>
+    </div>
+    <script src="{% static './script.js' %}"></script>
+  </body>
+</html>
